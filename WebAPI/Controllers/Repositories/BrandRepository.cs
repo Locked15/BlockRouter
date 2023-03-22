@@ -1,14 +1,12 @@
 ﻿using BlockRouter.WebAPI.Controllers.Repositories.Base;
 using BlockRouter.WebAPI.Models.Entities;
-using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
-using Serilog.Core;
 using System.ComponentModel.DataAnnotations;
 
-namespace WebAPI.Controllers.Repositories
+namespace BlockRouter.WebAPI.Controllers.Repositories
 {
-    public class BrandRepository : IBrandRepository
+    public class BrandRepository : IRepository<Brand>
     {
         private readonly PostgresDataContext _dataContext;
 
@@ -63,7 +61,7 @@ namespace WebAPI.Controllers.Repositories
             }
             else
             {
-                Log.Error("On 'Create' new 'Brand' error happened:\nModel isn't valid.");
+                Log.Error("On 'Update' new 'Brand' error happened:\nModel isn't valid.");
                 return false;
             }
         }

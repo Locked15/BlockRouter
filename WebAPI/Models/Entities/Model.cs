@@ -1,4 +1,6 @@
-﻿namespace BlockRouter.WebAPI.Models.Entities;
+﻿using System.Text.Json.Serialization;
+
+namespace BlockRouter.WebAPI.Models.Entities;
 
 public partial class Model
 {
@@ -10,5 +12,6 @@ public partial class Model
 
     public bool IsActive { get; set; }
 
+    [JsonIgnore]
     public virtual Brand Brand { get; set; } = null!;
 }
