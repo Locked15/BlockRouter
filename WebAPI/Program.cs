@@ -118,7 +118,7 @@ namespace BlockRouter.WebAPI
         {
             var corsBuilder = new CorsPolicyBuilder().AllowAnyHeader()
                                                      .AllowAnyMethod()
-                                                     .AllowCredentials();
+                                                     .AllowAnyOrigin();
             return corsBuilder.Build();
         }
 
