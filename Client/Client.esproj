@@ -1,13 +1,15 @@
 <Project Sdk="Microsoft.VisualStudio.JavaScript.Sdk/0.5.76-alpha">
-  <PropertyGroup>
-    <StartupCommand>npm run serve</StartupCommand>
+  <PropertyGroup>    
     <JavaScriptTestRoot>.\</JavaScriptTestRoot>
     <JavaScriptTestFramework>Jest</JavaScriptTestFramework>
-    <!-- Command to run on project build -->
+
     <BuildCommand></BuildCommand>
-    <!-- Command to create an optimized build of the project that's ready for publishing -->
+    <!-- Command to start application: -->
+    <StartupCommand>npm run serve</StartupCommand>
+    <!-- Command to create an optimized build of the project that's ready for publishing: -->
     <ProductionBuildCommand>npm run build</ProductionBuildCommand>
-    <!-- Folder where production build objects will be placed -->
+
+    <!-- Folder where production build objects will be placed: -->
     <BuildOutputFolder>$(MSBuildProjectDirectory)\dist</BuildOutputFolder>
   </PropertyGroup>
 </Project>

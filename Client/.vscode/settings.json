@@ -1,0 +1,12 @@
+{
+  "files.eol": "\n",
+  "editor.tabSize": 2,
+  "cSpell.words": [
+    "axios",
+    "linebreak",
+    "singleline",
+    "swal",
+    "sweetalert"
+  ],
+  "editor.lineHeight": 1.75
+}
