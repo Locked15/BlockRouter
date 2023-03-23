@@ -31,7 +31,7 @@
 <script lang="ts">
   import User from '@/models/User';
   import axios from 'axios';
-  import swal from 'sweetalert2';
+  import Swal from 'sweetalert2';
   import { Vue } from 'vue-class-component';
 
   import appData from '../../data';
@@ -51,7 +51,6 @@
     }
 
     public data(): User {
-      this.user = User.getDefaultUser();
       return this.user;
     }
     // #endregion Component-Specific Functions.
@@ -69,15 +68,15 @@
             localStorage.setItem(appData.tokenKeyName, JSON.stringify(response.data.token));
             localStorage.setItem(appData.currentUserKeyName, JSON.stringify(this.user));
 
-            swal.fire('Authorization is successful!', 'Success!', 'success');
+            Swal.fire('Authorization is successful!', 'Success!', 'success');
             this.$router.push({ name: 'DashBoard' });
           }
         });
         apiQuery.catch((error) => {
           if (error.response === undefined || error.response.status === undefined) {
-            swal.fire('Whoops, looks like API not available now.\n\nPlease, stand by.', 'Not Available', 'error');
+            Swal.fire('Whoops, looks like API not available now.\n\nPlease, stand by.', 'Not Available', 'error');
           } else if (error.response.status === 404) {
-            swal.fire('Are you sure about data, that you provided?', 'Login or/and Password is Incorrect', 'error');
+            Swal.fire('Are you sure about data, that you provided?', 'Login or/and Password is Incorrect', 'error');
           }
         });
       }
@@ -85,9 +84,9 @@
 
     private validateModelAndNotify() {
       if (!this.user.userName) {
-        swal.fire('Provide login to authorize.', 'Login is Missed', 'error');
+        Swal.fire('Provide login to authorize.', 'Login is Missed', 'error');
       } else if (!this.user.password) {
-        swal.fire('Provide password to authorize.', 'Password is Missed', 'error');
+        Swal.fire('Provide password to authorize.', 'Password is Missed', 'error');
       } else {
         return true;
       }
@@ -97,9 +96,9 @@
 
     public helpWithPassword() {
       if (!this.user.userName) {
-        swal.fire('Are you forget password, or your login, by the way?', 'Are you?', 'question');
+        Swal.fire('Are you forget password, or your login, by the way?', 'Are you?', 'question');
       } else {
-        swal.fire('We need to be sure, that YOU is really YOU.', "Where's proof?", 'question');
+        Swal.fire('We need to be sure, that YOU is really YOU.', "Where's proof?", 'question');
       }
     }
     // #endregion Authorization Functions.
@@ -135,5 +134,8 @@
 
   .submit-button {
     margin-top: 3.14%;
+    width: 32%;
+
+    align-self: center;
   }
 </style>
