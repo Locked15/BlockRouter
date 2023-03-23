@@ -28,7 +28,7 @@ namespace BlockRouter.WebAPI.Controllers
 
         #region Actions
 
-        [HttpPost]
+        [HttpGet]
         [Route("SignIn/{login}/{password}")]
         public async Task<IActionResult> SignIn(string login, string password)
         {
