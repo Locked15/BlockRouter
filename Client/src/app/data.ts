@@ -32,5 +32,6 @@ export default {
    */
   publicPages: [
     '/login',
+    '/:pathMatch(.*)*',
   ],
 };

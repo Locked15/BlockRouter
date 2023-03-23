@@ -1,18 +1,11 @@
 <template>
   <main>
-    <h1>Vue3 Application</h1>
-    <SignIn />
+    <h1>BlockRouter Application</h1>
+    <router-view class="content" />
   </main>
 </template>
 
 <script lang="ts">
-  import SignIn from './components/Auth/SignIn.vue';
-
-  export default {
-    components: {
-      SignIn,
-    },
-  };
 </script>
 
 <style>
@@ -35,5 +28,9 @@
 
   nav a.router-link-exact-active {
     color: #42b983;
+  }
+
+  .content {
+    margin-top: 16%;
   }
 </style>

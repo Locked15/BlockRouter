@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Text here.</h1>
+    <h2>Grats, you are USER!</h2>
   </div>
 </template>
 <script lang="ts"></script>
